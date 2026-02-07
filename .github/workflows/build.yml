@@ -1,0 +1,16 @@
+name: Build macOS App
+on: [push]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install pyinstaller pillow
+      - run: pyinstaller ImageResizer_mac.spec
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ImageResizer-mac
+          path: dist/ImageResizer.app
