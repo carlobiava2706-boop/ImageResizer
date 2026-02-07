@@ -60,7 +60,7 @@ coll = COLLECT(
 app = BUNDLE(
     coll,
     name='ImageResizer.app',
-    icon=None,  # Add 'icon.icns' here if you have one
+    icon='icon.icns',  # ← ADD THIS LINE (was None before)
     bundle_identifier='com.carlo.imageresizer',
     info_plist={
         'CFBundleShortVersionString': '2.0.0',
